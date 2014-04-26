@@ -1,14 +1,13 @@
 #include <stdio.h>
 
-int is_palindrome(int number){
-    char snumber[6];
-    sprintf(snumber, "%d", number);
-    for(int i = 0; i <= 2; i++){
-        if(snumber[i] != snumber[5 - i]){
-            return 0;
-        }
+int is_palindrome(int n){
+    int a = 0;
+    while(n>0){
+        a = a * 10 + n % 10;
+        n /= 10;
+        if(a == n) return 1;
     }
-    return 1;
+    return 0;
 }
 
 int main(int argc, char *argv[]){
